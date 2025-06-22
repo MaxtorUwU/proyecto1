@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/css/Registro.css" />
+  <link rel="stylesheet" href="/css/Home.css" />
+</head>
+<body>
+  {{#if isHome}}
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">MiPortalEstudiantil</a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/ayuda" class="nav-link">Ayuda</a></li>
+        </ul>
+      </div>
+    </nav>
+  {{else}}
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">MiPortalEstudiantil</a>
+        <ul class="nav-menu">
+          {{#if isDashboard}}
+            <li class="nav-item"><a href="/dashboard" class="nav-link">Mi Horario</a></li>
+            <li class="nav-item"><a href="/asignaturas" class="nav-link">Asignaturas</a></li>
+            <li class="nav-item"><a href="/perfil" class="nav-link">Perfil</a></li>
+            <li class="nav-item"><a href="/auth/logout" class="nav-link" style="font-weight:600;">Cerrar sesión</a></li>
+          {{else}}
+            <li class="nav-item"><a href="/ayuda" class="nav-link">Ayuda</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  {{/if}}
+  {{{body}}}
+</body>
+</html>
